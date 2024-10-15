@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { theme } from "../../style/theme";
 import { ButtonStyled } from "../loginOption/index.styles";
+import { CenterItems } from "../loginOption/index.styles";
+import Login from ".";
 export const InputStyled = styled.input`
   width: 90%;
   background-color: #fff;
@@ -13,8 +15,8 @@ export const InputStyled = styled.input`
     border: none;
     outline: none;  /* 포커스 시 outline 제거 */
   }
-  ::placeholder{
-    font-size: 12px;
+  &&::placeholder{
+    font-size: 13px;
   }
 `;
 export const LoginBtn = styled(ButtonStyled)`
@@ -23,4 +25,8 @@ export const LoginBtn = styled(ButtonStyled)`
   font-weight: 400;
   border: none;
   padding: 12px;
+`;
+
+export const LoginCenterItem = styled(CenterItems)`
+  margin-top: 0;
 `;

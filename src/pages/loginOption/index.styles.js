@@ -16,9 +16,10 @@ export const ButtonStyled = styled.button`
 export const NewIdBtn = styled(ButtonStyled)`
   border: 1.5px solid ${theme.color.BuleBorder};
   color: #0064E0;
-  margin: 0 auto;
+  margin: 0px auto;
   margin-bottom: 0;
-`
+  width: 90%; /* 중앙 정렬에 도움을 줄 수 있는 너비 설정 */
+`;
 
 export const LogoContainer = styled.div`
   width: 100%;
@@ -56,8 +57,9 @@ export const CenterItems = styled.div`
   justify-content: center;  /* 수직 중앙 정렬 */
   align-items: center;  /* 가로 중앙 정렬 */
   width: 100%;  /* 너비를 전체로 설정 */
-  height: 100%; /* 높이도 전체로 설정 */
+  height: 100%;
   gap: 0; /* 요소 간 간격을 없앰 */
+  margin-top: 35px;
 `;
 
 export const WrapperStyle = styled(Wrapper)`
