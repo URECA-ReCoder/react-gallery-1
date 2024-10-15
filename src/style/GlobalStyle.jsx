@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Pretendard', sans-serif;  // 대체 폰트 추가
-        background-color: #dbdbdb;
+        background-color: #e8e8e8;
         justify-content: center;
     }
     a{
