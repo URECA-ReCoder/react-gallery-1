@@ -1,9 +1,10 @@
-import { Wrapper } from '@components/common/commonUI';
+import { Wrapper } from '@components/common/commonUI/';
+import Header from '@components/common/header';
 
 const Main = () => {
   return (
     <Wrapper>
-      <div>메인입니다.</div>
+      <Header></Header>
     </Wrapper>
   );
 };
