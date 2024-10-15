@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   width: 100%;
   height: 60px;
   display: flex;
@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   align-items: center; //수직
   padding: 16px 24px;
   border-bottom: 1px solid #e0e0e0;
+  z-index: 2;
 `;
 
 export const Title = styled.span`
