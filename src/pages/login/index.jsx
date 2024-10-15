@@ -1,30 +1,31 @@
-import { Footer } from '../../components/common/commonUI';
 import {
   WrapperStyle,
-  ButtonStyled,
-  LogoContainer,
-  NoLogin,
-  CenterItems,
   NewIdBtn,
-} from './index.styles';
+  LogoContainer,
+} from '../loginOption/index.styles';
+import { InputStyled, LoginBtn, LoginCenterItem } from './index.styles';
+import { Footer, Header } from '../../components/common/commonUI';
 import instagram from '../../assets/icons/instagram.png';
-import user from '../../assets/icons/user.png';
+import back from '../../assets/icons/back.png';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <WrapperStyle>
-      <CenterItems>
+      <Header>
+        <img src={back} onClick={() => navigate(-1)}/>
+      </Header>
+      <LoginCenterItem>
         <LogoContainer>
           <img src={instagram} />
         </LogoContainer>
-        <NoLogin>
-          <img src={user} />
-          <div style={{ color: 'black' }}>로그인 없이 이용하기</div>
-        </NoLogin>
-        <ButtonStyled>다른 계정으로 로그인</ButtonStyled>
-      </CenterItems>
-      <Footer>
+        <InputStyled placeholder="아이디" />
+        <InputStyled placeholder="비밀번호" type='password'/>
+        <LoginBtn>로그인</LoginBtn>
+      </LoginCenterItem>
+        <Footer>
         <NewIdBtn>새 계정 만들기</NewIdBtn>
-      </Footer>
+        </Footer>
     </WrapperStyle>
   );
 };
