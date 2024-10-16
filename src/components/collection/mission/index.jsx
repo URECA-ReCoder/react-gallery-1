@@ -12,11 +12,11 @@ import {
 import Profile from '@components/common/profile';
 import like from '@assets/icons/like.svg';
 import send from '@assets/icons/send.svg';
+import { forwardRef } from 'react';
 
-
-const Mission = (props) => {
+const Mission = forwardRef((props, ref) => {
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <TitleWrapper>
         <Profile img={props.profile} size={28}/>
         <TitleCreator>{props.creator}</TitleCreator>
@@ -36,6 +36,6 @@ const Mission = (props) => {
       </DescriptionWrapper>
     </Wrapper>
   );
-};
+});
 
 export default Mission;
