@@ -12,6 +12,7 @@ import Header from '../../components/common/Header';
 import { LoginAPI } from '../../api/LoginAPI';
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+
 const Login = () => {
   const navigate = useNavigate();
   const [inputInfo, setInputInfo] = useState({
@@ -31,6 +32,7 @@ const Login = () => {
     }
     try {
       const data = await LoginAPI(inputInfo); // 로그인 API 호출
+
       login(data.token, data.user); //zustand 스토어에 토큰과 사용자 정보 저장
       //JWT 토큰을 sessionStorage에 저장
       // sessionStorage.setItem('token', data.token); //zustand의 미들웨어를 사용해 sessionStorage에 저장
@@ -40,9 +42,11 @@ const Login = () => {
       alert('로그인에 실패했습니다. 다시 시도해주세요.');
     }
   };
-  const handleSignupClick = () => {
-    navigate('/signup');
-  };
+
+  const handleSignupClick = () =>{
+    navigate('/signup')
+  }
+
   return (
     <WrapperStyle>
       <Header />

@@ -14,8 +14,11 @@ const LoginOption = () => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    navigate('login');
+    navigate('/login');
   };
+  const handleSignupClick = () =>{
+    navigate('/signup')
+  }
 
   return (
     <WrapperStyle>
@@ -32,7 +35,7 @@ const LoginOption = () => {
         </ButtonStyled>
       </CenterItems>
       <Footer>
-        <NewIdBtn>새 계정 만들기</NewIdBtn>
+        <NewIdBtn onClick={handleSignupClick}>새 계정 만들기</NewIdBtn>
       </Footer>
     </WrapperStyle>
   );
