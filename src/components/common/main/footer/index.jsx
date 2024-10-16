@@ -2,7 +2,7 @@ import { Wrapper, Icon } from './index.styles';
 import home from '@assets/icons/home.png';
 import search from '@assets/icons/search.png';
 import plus from '@assets/icons/plus.png';
-import unlike from '@assets/icons/unlike.png';
+import unlike from '@assets/icons/unlike.svg';
 import ProfileImg from '@assets/images/defaultProfile.svg';
 import Profile from '@components/common/profile';
 

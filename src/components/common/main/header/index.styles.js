@@ -11,6 +11,7 @@ export const Wrapper = styled.header`
   z-index: 2;
   position: absolute;
   background-color: white;
+  top: 0;
 `;
 
 export const Title = styled.span`
