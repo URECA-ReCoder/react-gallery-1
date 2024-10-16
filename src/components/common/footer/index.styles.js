@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.footer`
   width: 100%;
   height: 64px;
-  padding: 10px 20px;
+  padding: 10px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center; 
@@ -16,8 +16,8 @@ export const Wrapper = styled.footer`
 `;
 
 export const Icon = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin: 0 8px;
   cursor: pointer;
 `;

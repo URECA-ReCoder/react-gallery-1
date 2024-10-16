@@ -6,7 +6,10 @@ export const Wrapper = styled.div`
     background-color: white;
     position: relative;
     justify-content: center;
-    `;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+`;
 
 export const Footer = styled.div`
   bottom: 0;
@@ -17,3 +20,4 @@ export const Footer = styled.div`
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
 `;
+
