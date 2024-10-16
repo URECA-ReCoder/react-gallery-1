@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     body,html{
-        width: 100vh;
+        width: 100vw;
         height: 100vh;
         display: flex;
         font-family: 'Pretendard', sans-serif;  // 대체 폰트 추가
