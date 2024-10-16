@@ -11,6 +11,10 @@ export default defineConfig({
         find: '@components',
         replacement: '/src/components',
       },
+      {
+        find: '@assets',
+        replacement: '/src/assets',
+      }
     ],
   },
 })
