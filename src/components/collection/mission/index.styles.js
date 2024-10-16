@@ -11,13 +11,12 @@ export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
-  padding: 7px 13px;
+  padding: 7px 0px 0px 4px;
 `;
 
 export const TitleCreator = styled.p`
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: bold;
 `;
 
 export const Screenshot = styled.img`
@@ -28,7 +27,7 @@ export const Screenshot = styled.img`
 export const IconWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  gap: 12px;
+  gap: 8px;
   padding: 10px 12px;
 `;
 
@@ -42,15 +41,14 @@ export const Button = styled.button`
 
 export const DescriptionWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
   padding: 0px 12px;
 `;
 
 export const DescriptionCreator = styled.p`
   font-size: 12px;
-  font-weight: 500;
+  font-weight: bold;
 `;
 
 export const Description = styled.p`
