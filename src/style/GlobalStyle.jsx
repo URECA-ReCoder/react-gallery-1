@@ -7,11 +7,18 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        :focus{
+            outline: none;
+        }
     }
-    body{
+    body,html{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
         font-family: 'Pretendard', sans-serif;  // 대체 폰트 추가
-        background-color: #dbdbdb;
+        background-color: #e8e8e8;
         justify-content: center;
+        align-items: center;
     }
     a{
         outline: none;

@@ -5,4 +5,15 @@ export const Wrapper = styled.div`
     max-height: 859px;
     background-color: white;
     position: relative;
+    justify-content: center;
+    `;
+
+export const Footer = styled.div`
+  bottom: 0;
+  z-index: 2;
+  width: 393px;
+  height: 84px;
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
 `;
