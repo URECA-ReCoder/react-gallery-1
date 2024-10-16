@@ -22,3 +22,13 @@ export const Footer = styled.div`
   align-items: center; /* 세로 중앙 정렬 */
 `;
 
+export const WaitWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  font-size: 20px;
+  font-weight: normal;
+  color: #4f4f4f;
+`;
