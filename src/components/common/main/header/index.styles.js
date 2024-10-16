@@ -9,9 +9,9 @@ export const Wrapper = styled.header`
   padding: 16px 24px;
   border-bottom: 1px solid #e0e0e0;
   z-index: 2;
-  position: absolute;
   background-color: white;
   top: 0;
+  /* position: absolute; */
 `;
 
 export const Title = styled.span`

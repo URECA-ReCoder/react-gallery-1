@@ -24,6 +24,7 @@ export const Footer = styled.div`
 
 export const WaitWrapper = styled.div`
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
   width: 100%;

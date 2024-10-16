@@ -1,25 +1,32 @@
 import { useSearchStore } from '@src/store/mission';
-import { Wrapper, Input } from './index.styles';
-import search from '@assets/icons/search.svg';
+import {
+  Wrapper,
+  InputWrapper,
+  SearchImg,
+  Input,
+  ExitButton,
+  EraseButton,
+} from './index.styles';
+import searchImg from '@assets/icons/inputSearch.svg';
 import { useNavigate } from 'react-router-dom';
 
 const SearchBar = () => {
   const { searchQuery, setSearchQuery } = useSearchStore();
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <InputWrapper>
-      <Img src={search} alt="search"/>
-      <Input
-        type="text"
-        placeholder="검색"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <Button onClick={() => setSearchQuery('')}>
-        <Img src={close} alt="close" />
-      </Button>
+        <SearchImg src={searchImg} alt="search" />
+        <Input
+          type="text"
+          placeholder="검색"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <EraseButton onClick={() => setSearchQuery('')}>X</EraseButton>
       </InputWrapper>
-      <Button onClick={() => useNavigate(-1)}>취소</Button>
+      <ExitButton onClick={() => navigate(-1)}>취소</ExitButton>
     </Wrapper>
   );
 };

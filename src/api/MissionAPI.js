@@ -4,7 +4,7 @@ import axios from 'axios';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const fetchMissions = async () => {
-  const response = await axios.get(`${apiUrl}missions`);
+  const response = await axios.get(`${apiUrl}/missions`);
   return response.data;
 }
 
