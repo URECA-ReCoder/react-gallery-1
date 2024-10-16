@@ -22,7 +22,6 @@ const LoginOption = () => {
   const handleSignupClick = () => {
     navigate('/signup');
   };
-
   const handleMain = () => {
     navigate('/main');
   };

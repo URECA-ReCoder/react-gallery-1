@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import useAuth from '../../hooks/useAuth'; // Zustand 스토어 불러오기
+import useAuth from '../../store/useAuth'; // Zustand 스토어 불러오기
 const apiKey = import.meta.env.VITE_REST_API_KEY;
 const KakaoLogin = () => {
   const navigate = useNavigate();

@@ -72,7 +72,7 @@ export const CenterItems = styled.div`
   width: 100%;  /* 너비를 전체로 설정 */
   height: 100%;
   gap: 0; /* 요소 간 간격을 없앰 */
-  margin-top: 35px;
+  margin-top: 80px;
 `;
 
 export const WrapperStyle = styled(Wrapper)`
