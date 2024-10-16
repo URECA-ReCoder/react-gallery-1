@@ -1,5 +1,5 @@
 //zustand로 전역 관리하기
-import create from 'zustand';
+import { create } from 'zustand';
 import { persist } from 'zustand/middleware';//미들 웨어
 
 const useAuth = create(

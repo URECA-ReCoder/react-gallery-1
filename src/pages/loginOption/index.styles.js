@@ -17,10 +17,23 @@ export const NewIdBtn = styled(ButtonStyled)`
   border: 1.5px solid ${theme.color.BuleBorder};
   color: #0064E0;
   margin: 0px auto;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   width: 90%; /* 중앙 정렬에 도움을 줄 수 있는 너비 설정 */
 `;
+export const KaKaoLoginBtn = styled(NewIdBtn)`
+  background-color: #f9e000;
+  margin-bottom: 10px;
+  border: #f9e000;
+  color: #000;
+  display: flex;  /* Flexbox로 변경 */
+  align-items: center;  /* 세로 가운데 정렬 */
+  justify-content: center;  /* 가로 가운데 정렬 */
+  padding: 7px;
 
+  img {
+    width: 25px;
+  }
+`;
 export const LogoContainer = styled.div`
   width: 100%;
   display: flex;
