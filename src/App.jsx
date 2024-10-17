@@ -24,6 +24,7 @@ function App() {
             <Route path="/main" element={<Main />} />
             <Route path="/kakaokLogin" element={<KakaoLogin />} />
             {/* <Route path="/search/:search" element={<Search />} /> */}
+            <Route path="/search" element={<Search />} />
             <Route path="*" element={<Main />} />
           </Routes>
         </BrowserRouter>
