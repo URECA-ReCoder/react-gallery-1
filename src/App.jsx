@@ -5,6 +5,7 @@ import Main from './pages/main';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Search from './pages/search';
+import KakaoLogin from './pages/kakaoLogin';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
@@ -21,6 +22,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/main" element={<Main />} />
+            <Route path="/kakaokLogin" element={<KakaoLogin />} />
+            {/* <Route path="/search/:search" element={<Search />} /> */}
             <Route path="/search" element={<Search />} />
             <Route path="*" element={<Main />} />
           </Routes>
