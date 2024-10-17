@@ -32,7 +32,7 @@ const Login = () => {
     }
     try {
       const { token, user } = await LoginAPI(inputInfo); // 로그인 API 호출 후 토큰과 사용자 정보 반환
-      login(token, user); // Zustand 스토어에 사용자 정보와 토큰 저장
+      login(user, token, 'local'); // Zustand 스토어에 사용자 정보와 토큰 저장
 
       console.log('User Info:', user);
       console.log('JWT Token:', token);

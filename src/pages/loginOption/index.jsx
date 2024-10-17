@@ -13,6 +13,7 @@ import user from '../../assets/icons/user.png';
 import { useNavigate } from 'react-router-dom';
 import kakao from '../../assets/icons/kakao.png';
 import { kakaoLink } from '../../api/KakaoAPI';
+
 const LoginOption = () => {
   const navigate = useNavigate();
 
