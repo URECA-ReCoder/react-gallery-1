@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
         :focus{
             outline: none;
         }
+        scrollbar-width: none;
     }
     body,html{
         width: 100vw;
@@ -19,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: #e8e8e8;
         justify-content: center;
         align-items: center;
+        overscroll-behavior: none;
     }
     a{
         outline: none;
