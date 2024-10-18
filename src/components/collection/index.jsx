@@ -23,8 +23,10 @@ const Collection = ({missions}) => {
           creator={mission.creator}
           url={mission.url}
           likes={mission.likes}
+          likesCount={mission.likes.length}
           screenshot={testImg}
           profile={defaultProfile}
+          id={mission.id}
         />
       ))}
     </Wrapper>

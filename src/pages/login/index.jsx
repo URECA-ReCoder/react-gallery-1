@@ -32,10 +32,9 @@ const Login = () => {
     }
     try {
       const data = await LoginAPI(inputInfo); // 로그인 API 호출
-
       login(data.token, data.user); //zustand 스토어에 토큰과 사용자 정보 저장
       //JWT 토큰을 sessionStorage에 저장
-      // sessionStorage.setItem('token', data.token); //zustand의 미들웨어를 사용해 sessionStorage에 저장
+      localStorage.setItem('accessToken', data.accessToken); //zustand의 미들웨어를 사용해 sessionStorage에 저장
       navigate('/main');
     } catch (error) {
       console.error('로그인 실패:', error);

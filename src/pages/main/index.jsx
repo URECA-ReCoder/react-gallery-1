@@ -2,7 +2,7 @@ import { Wrapper, WaitWrapper } from '@components/common/commonUI';
 import Header from '@components/common/main/header';
 import Footer from '@components/common/main/footer';
 import Collection from '@components/collection';
-import { useMissions } from '@src/api/MissionAPI';
+import { useMissions } from '@src/api/MissionListAPI';
 
 const Main = () => {
   const { data: missions, isLoading, error } = useMissions();
