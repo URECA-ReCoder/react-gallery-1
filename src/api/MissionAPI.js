@@ -1,16 +1,14 @@
-import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-
+import { useQuery } from '@tanstack/react-query';
 const apiUrl = import.meta.env.VITE_API_URL;
 
-const fetchMissions = async () => {
-  const response = await axios.get(`${apiUrl}/missions`);
+const fetchMission = async (missionId) => {
+  const response = await axios.get(`${apiUrl}/missions/${missionId}`);
   return response.data;
 }
 
-export const useMissions = () => {
-  return useQuery({
-    queryKey: ['missions'],  // queryKey는 배열로 전달
-    queryFn: fetchMissions   // queryFn에 fetch 함수 전달
+export const useMission = () => {
+  return useQuery(['mission', missionId], () => fetchMission(missionId), {
+    enabled: !!missionId,
   });
 };
