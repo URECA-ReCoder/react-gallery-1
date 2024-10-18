@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/common/Header';
 import { LoginAPI } from '../../api/LoginAPI';
 import { useState } from 'react';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../store/useAuth';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,8 +31,12 @@ const Login = () => {
       return;
     }
     try {
-      const data = await LoginAPI(inputInfo); // 로그인 API 호출
-      login(data.token, data.user); //zustand 스토어에 토큰과 사용자 정보 저장
+      const { token, user } = await LoginAPI(inputInfo); // 로그인 API 호출 후 토큰과 사용자 정보 반환
+      login(token, user); // Zustand 스토어에 사용자 정보와 토큰 저장
+
+      console.log('User Info:', user);
+      console.log('JWT Token:', token);
+      navigate('/main'); // 메인 페이지로 이동
       //JWT 토큰을 sessionStorage에 저장
       localStorage.setItem('accessToken', data.accessToken); //zustand의 미들웨어를 사용해 sessionStorage에 저장
       navigate('/main');
@@ -42,9 +46,9 @@ const Login = () => {
     }
   };
 
-  const handleSignupClick = () =>{
-    navigate('/signup')
-  }
+  const handleSignupClick = () => {
+    navigate('/signup');
+  };
 
   return (
     <WrapperStyle>

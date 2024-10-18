@@ -16,8 +16,9 @@ export const Footer = styled.div`
   bottom: 0;
   z-index: 2;
   width: 393px;
-  height: 84px;
+  /* height: 84px; */
   display: flex;
+  flex-direction: column;
   justify-content: center; /* 가로 중앙 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
 `;
