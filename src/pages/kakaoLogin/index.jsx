@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import useAuth from '../../store/useAuth'; // Zustand 스토어 불러오기
+import useAuth from '@src/hooks/useAuth'; // Zustand 스토어 불러오기
 const apiKey = import.meta.env.VITE_REST_API_KEY;
+import { fetchUserInfo } from '@src/api/ProfileAPI';
+
 const KakaoLogin = () => {
   const navigate = useNavigate();
   const { login } = useAuth(); // 로그인 상태 저장 함수 불러오기
@@ -11,30 +12,16 @@ const KakaoLogin = () => {
     const fetchToken = async () => {
       // URL에서 인가 코드 추출
       const params = new URLSearchParams(window.location.search);
-      const code = params.get('code');
+      const accessToken = params.get('access_token');
+      const refreshToken = params.get('refresh_token');
 
-      if (code) {
-        try {
-          // 백엔드에 인가 코드를 보내고 JWT 토큰을 받음
-          const response = await axios.post(`${apiKey}/auth/kakao`, { code });
-
-          const { token, user } = response.data;
-
-          login(token, user);
-
-          // JWT 토큰을 sessionStorage에 저장하여 새로고침 시 유지
-          sessionStorage.setItem('token', token);
-
-          // 메인 페이지로 이동
-          navigate('/main');
-        } catch (error) {
-          console.error('카카오 로그인 실패:', error);
-          alert('로그인에 실패했습니다.');
-          navigate('/login');
-        }
-      } else {
-        alert('카카오 로그인에 실패했습니다.');
-        navigate('/login');
+      if (accessToken) {
+        //zustand의 미들웨어를 사용해 sessionStorage에 저장
+        const user = await fetchUserInfo(accessToken);
+        //localStorage.setItem('accessToken', accessToken);
+        const token = accessToken;
+        login(token, user);
+        navigate('/main');
       }
     };
 

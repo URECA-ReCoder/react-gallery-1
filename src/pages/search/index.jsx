@@ -3,7 +3,7 @@ import Header from '@components/common/main/header';
 import Footer from '@components/common/main/footer';
 import Collection from '@components/collection';
 import SearchBar from '@components/searchBar';
-import { useMissions } from '@src/api/MissionAPI';
+import { useMissions } from '@src/api/MissionListAPI';
 import { useSearchStore } from '@src/store/mission';
 import { WaitWrapper } from '@components/common/commonUI';
 

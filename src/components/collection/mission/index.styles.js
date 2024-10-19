@@ -31,12 +31,23 @@ export const IconWrapper = styled.div`
   padding: 10px 12px;
 `;
 
+export const LikeWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+`;
+
 export const Button = styled.button`
   size: 28px;
   padding: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const CountText = styled.p`
+  font-size: 12px;
+  font-weight: bold;
 `;
 
 export const DescriptionWrapper = styled.div`

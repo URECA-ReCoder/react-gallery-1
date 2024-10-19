@@ -6,12 +6,12 @@ import {
 import { InputStyled, LoginBtn, LoginCenterItem } from './index.styles';
 import { Footer } from '../../components/common/commonUI';
 import instagram from '../../assets/icons/instagram.png';
-import back from '../../assets/icons/back.png';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/common/Header';
 import { LoginAPI } from '../../api/LoginAPI';
 import { useState } from 'react';
-import useAuth from '../../store/useAuth';
+import useAuth from '@src/hooks/useAuth';
+import { fetchUserInfo } from '@src/api/ProfileAPI';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,14 +31,16 @@ const Login = () => {
       return;
     }
     try {
-      const { token, user } = await LoginAPI(inputInfo); // 로그인 API 호출 후 토큰과 사용자 정보 반환
+      const token = await LoginAPI(inputInfo); // 로그인 API 호출 후 토큰과 사용자 정보 반환
+      const user = await fetchUserInfo(token); // 사용자 정보 API 호출
+      
       login(token, user); // Zustand 스토어에 사용자 정보와 토큰 저장
 
       console.log('User Info:', user);
       console.log('JWT Token:', token);
-      navigate('/main'); // 메인 페이지로 이동
+      
       //JWT 토큰을 sessionStorage에 저장
-      // sessionStorage.setItem('token', data.token); //zustand의 미들웨어를 사용해 sessionStorage에 저장
+      localStorage.setItem('accessToken', token); //zustand의 미들웨어를 사용해 sessionStorage에 저장
       navigate('/main');
     } catch (error) {
       console.error('로그인 실패:', error);

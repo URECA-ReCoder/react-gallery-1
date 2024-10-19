@@ -13,6 +13,8 @@ import user from '../../assets/icons/user.png';
 import { useNavigate } from 'react-router-dom';
 import kakao from '../../assets/icons/kakao.png';
 import { kakaoLink } from '../../api/KakaoAPI';
+const apiUrl = import.meta.env.VITE_API_URL;
+
 const LoginOption = () => {
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const LoginOption = () => {
   };
   const handleKakaoLogin = () => {
     window.location.href =
-      'https://vicarious-arlyn-recoder-cb1ffac8.koyeb.app/auth/kakao';
+      `${apiUrl}/auth/kakao`;
     // navigate(kakaoLink);
   };
   return (
