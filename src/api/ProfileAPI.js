@@ -4,7 +4,7 @@ import axios from 'axios';
 const apiUrl = import.meta.env.VITE_API_URL;
 
 // 사용자 정보 조회 API
-const fetchUserInfo = async (accessToken) => {
+export const fetchUserInfo = async (accessToken) => {
   const response = await axios.get(`${apiUrl}/auth/profile`,  {
     headers: {
       Authorization: `Bearer ${accessToken}`, // Bearer 추가

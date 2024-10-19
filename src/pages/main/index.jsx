@@ -2,8 +2,8 @@ import { Wrapper, WaitWrapper } from '@components/common/commonUI';
 import Header from '@components/common/main/header';
 import Footer from '@components/common/main/footer';
 import Collection from '@components/collection';
-import { useMissions } from '@src/api/MissionAPI';
-import useAuth from '../../store/useAuth';
+import { useMissions } from '@src/api/MissionListAPI';
+import useAuth from '@src/hooks/useAuth';
 const Main = () => {
   const { data: missions, isLoading, error } = useMissions();
   return (

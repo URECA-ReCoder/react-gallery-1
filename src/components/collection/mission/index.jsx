@@ -17,12 +17,11 @@ import unlike from '@assets/icons/unlike.svg';
 import send from '@assets/icons/send.svg';
 import { forwardRef } from 'react';
 import { useToggleLikePost } from '@src/api/LikeAPI';
-import { useUserInfo } from '@src/api/ProfileAPI';
 import { useEffect, useState } from 'react';
+import useAuth from '@src/hooks/useAuth';
 
 const Mission = forwardRef((props, ref) => {
-  const token = localStorage.getItem('accessToken');
-  const { data: user } = useUserInfo(token);
+  const { user, token, isAuthenticated } = useAuth();
 
   //로컬 상태 관리
   const [isLiked, setIsLiked] = useState(false);
@@ -80,7 +79,7 @@ const Mission = forwardRef((props, ref) => {
         </Button>
         <CountText>{likesCount}</CountText>
         </LikeWrapper>
-        <Button href="">
+        <Button onClick={() => window.open(props.url, '_blank')}>
           <img src={send} alt="send" />
         </Button>
       </IconWrapper>

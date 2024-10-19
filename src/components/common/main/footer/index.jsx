@@ -9,15 +9,19 @@ import ProfileImg from '@assets/images/defaultProfile.svg';
 import Profile from '@components/common/profile';
 import { useNavigate } from 'react-router-dom';
 import { usePageStore } from '@src/store/page';
+import useAuth from '@src/hooks/useAuth';
 
 const Footer = () => {
   const navigate = useNavigate();
   const { currentPage, setCurrentPage } = usePageStore();
+  const { user, token, isAuthenticated } = useAuth();
 
   const handleButtonClick = (page) => {
     setCurrentPage(page);
     navigate(page);
   }
+
+
 
   return (
     <Wrapper>

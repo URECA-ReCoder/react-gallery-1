@@ -22,10 +22,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/main" element={<Main />} />
-            <Route path="/kakaokLogin" element={<KakaoLogin />} />
-            {/* <Route path="/search/:search" element={<Search />} /> */}
+            <Route path="/kakaoLogin" element={<KakaoLogin />} />
             <Route path="/search" element={<Search />} />
-            <Route path="*" element={<Main />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
