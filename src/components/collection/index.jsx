@@ -1,11 +1,14 @@
 import { Wrapper } from './index.styles';
 import Mission from '@components/collection/mission';
-import testImg from '@assets/images/test.png'
 import defaultProfile from '@assets/images/defaultProfile.svg';
 import { useRef, useEffect } from 'react';
+import reactImg from '@assets/images/react.png';
+import vanillaImg from '@assets/images/vanilla.jpg';
 
 const Collection = ({missions}) => {
   const missionRef = useRef(null);
+  const reactString = "REACT";
+  const vanillaString = "VANILLA";
 
   useEffect(() => {
     if (missions && missions.length > 0 && missionRef.current) {
@@ -24,7 +27,7 @@ const Collection = ({missions}) => {
           url={mission.url}
           likes={mission.likes}
           likesCount={mission.likes.length}
-          screenshot={testImg}
+          screenshot={mission.type.includes(reactString) ? reactImg : vanillaImg }
           profile={defaultProfile}
           id={mission.id}
         />
